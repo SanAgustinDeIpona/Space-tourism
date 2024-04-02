@@ -1,0 +1,188 @@
+@use "variables" as v;
+@use "mixins" as mix;
+
+.technology{
+    @include mix.backgroundImgFormat('../assets/technology/background-technology-mobile.jpg');
+    height: 100vh;  
+    min-height: 100vh;
+    padding-top: 80px; 
+
+    &__container{
+        color: map-get(v.$colors, "color-white" );
+    }
+
+    &__title{
+        @include mix.formatTitleMv();
+    }
+
+    &__strong{
+        @include mix.formatSpamMv();
+    }
+
+    &__img-container{
+        width: 100%;
+        height: 220px;
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__card{
+        text-align: center;
+    }
+
+    &__card-title{
+        font-family: map-get(v.$font , "Barlow Condensed");
+        color: map-get(v.$colors, "color-secondary");
+        font-size: .7rem;
+        font-weight: 100;
+        margin-bottom: .5rem;
+    }
+
+    &__text{
+        
+    }
+
+    &__description{
+        color: map-get(v.$colors, "color-secondary");
+        margin-top: 1rem;
+        font-size: .9rem;
+        line-height: 1.5rem;
+        font-family: map-get(v.$font , "Barlow Condensed");
+        font-weight: 100;
+        padding: 0 1.5rem;
+    }
+
+    &__next-container{
+        display: flex;
+        justify-content: space-evenly;
+        width: 170px;
+        margin: 25px auto;
+    }
+
+    &__next{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border:1px solid map-get(v.$colors, "color-white" );
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    &__next--active{
+        color: map-get(v.$colors, "color-black" );
+        background-color: map-get(v.$colors, "color-white");
+    }
+
+
+    @include mix.responsi(768px){
+        background-image: url('../assets/technology/background-technology-tablet.jpg');
+        height: 1024px;
+        padding-top: 136px;
+
+        &__title{
+            text-align: left;
+            font-size: 20px;
+            margin-left: 24px;
+            margin-bottom: 55px;
+        }
+
+        &__strong{
+            font-size: 20px;
+        }
+
+        &__img-container{
+            width: 100%;
+            height: 310px;
+        }
+
+        &__text{
+            font-size: 40px;
+            margin: 1.5rem 0;
+        }
+
+        &__description{
+            width: 458px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        &__next-container{
+            margin: 60px auto;
+        }
+    }
+
+
+    @include mix.responsi(1020px){
+        background-image: url('../assets/technology/background-technology-desktop.jpg');
+        height: 110vh;
+        padding-top: 120px;
+
+        &__container{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+
+        &__title{
+            margin-left: 185px;
+            margin-bottom: 55px;
+            margin-top: 2rem;
+            text-align: left;
+            font-size: 28px;
+        }
+
+        &__strong{
+            font-size: 20px;
+        }
+
+        &__img-container{
+            width: 515px;
+            height: 527px;
+        }
+
+        &__card{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: left;
+            margin-left: 9rem;
+        }
+
+        &__text{
+            font-size: 56px;
+            margin: 1.5rem 0;
+        }
+
+        &__card-title{
+            font-size: 16px;
+        }
+
+        &__description{
+            width: 470px;
+            margin: 0;
+            margin-left: -1.5rem;
+            font-size: 18px;
+        }
+
+        &__next-container{
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 290px;
+        }
+
+        &__next{
+            height: 80px;
+            width: 80px;
+            font-size: 32px;
+        }
+    }
+}

@@ -1,0 +1,208 @@
+@use "variables" as v;
+@use "mixins" as mix;
+
+.crew{
+    @include mix.backgroundImgFormat('../assets/crew/background-crew-mobile.jpg');
+    height: 100vh;  
+    min-height: 100vh;
+    padding-top: 80px;
+    color: map-get(v.$colors, "color-white");
+
+    &__container{
+        color: map-get(v.$colors, "color-white" );
+    }
+
+    &__title{
+        @include mix.formatTitleMv();
+    }
+
+    &__strong{
+        @include mix.formatSpamMv();
+    }
+
+    &__img-container{
+        width: 90%;
+        border-bottom: 1px solid map-get(v.$colors, "color-opacity" );
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__img{
+        width: 50%;
+        max-width: 222px;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__next-container{
+        display: flex;
+        justify-content: space-evenly;
+        width: 150px;
+        height: 10px;
+        margin: 2rem auto;
+    }
+
+    &__next{ 
+        background-color: map-get(v.$colors, "color-opacity");
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    &__next--active{
+        background-color: map-get(v.$colors, "color-white");
+    }
+
+    &__content{
+        text-align: center;
+        line-height: 2.2rem;
+    }
+
+    &__position{
+        color: map-get(v.$colors, "color-secondary");
+        font-size: 1rem;
+        margin-top: 3rem;
+    }
+
+    &__name{
+        font-size: 2em;
+        font-weight: 100;
+        font-family: map-get(v.$font, "Bellefair" );
+    }
+
+    &__description{
+        color: map-get(v.$colors, "color-secondary");
+        margin-top: 1rem;
+        font-size: .9rem;
+        line-height: 1.5rem;
+        font-family: map-get(v.$font , "Barlow Condensed");
+        font-weight: 100;
+        padding: 0 1.5rem;
+    }
+
+    @include mix.responsi(768px){
+        height: 1024px;
+        padding-top: 136px;
+        background-image: url("../assets/crew/background-crew-tablet.jpg");
+
+        &__container{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        &__comander{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        &__title{
+            text-align: left;
+            font-size: 20px;
+            margin-left: 12%;
+            margin-bottom: 55px;
+        }
+
+        &__strong{
+            font-size: 20px;
+        }
+
+        &__img-container{
+            width: 456px;
+            height: 530px;
+            border: none;
+        }
+
+        &__img{
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &__content{
+            width: 458px;
+            margin: 0 auto;
+        }
+
+        &__name{
+            font-size: 40px;
+            margin: 1rem 0;
+        }
+
+        &__position{
+            font-size: 24px;
+            margin-top: 0rem;
+        }
+
+    }
+
+    @include mix.responsi(1024px){
+        background-image: url('../assets/crew/background-crew-desktop.jpg');
+        height: 100vh;
+        padding-top: 136px;
+
+        &__container{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        &__comander{
+            display: flex;
+            flex-direction: column-reverse;
+
+        }
+
+        &__title{
+            text-align: left;
+            font-size: 28px;
+            margin-bottom: 55px;
+            margin-top: 2rem;
+        }
+
+        &__strong{
+            font-size: 20px;
+        }
+
+        &__img-container{
+            width: 468px;
+            height: 32rem;
+            border: none;
+            margin-top: -4.1rem;
+        }
+
+        &__img{
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &__next-container{
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 8rem;
+            justify-content: space-between;
+        }
+
+        &__content{
+            width: 650px;
+            margin: 0 auto;
+            text-align: left;
+            line-height: 4rem;
+        }
+
+        &__name{
+            font-size: 56px;
+            margin: 0 0;
+        }
+
+        &__description{
+            padding: 0 0;
+            padding-right: 3rem;
+            font-size: 18px;
+        }
+
+        &__position{
+            font-size: 24px;
+        }
+
+    }
+}

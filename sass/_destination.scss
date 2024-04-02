@@ -1,0 +1,211 @@
+@use "variables" as v;
+@use "mixins" as mix;
+
+.destination{
+    @include mix.backgroundImgFormat('../assets/destination/background-destination-mobile.jpg');
+    height: 113vh;
+    min-height: 100vh;
+    padding-top: 80px;
+    color: map-get(v.$colors, "color-white");
+
+    &__container{
+        text-align: center;
+    }
+
+    &__title{
+        @include mix.formatTitleMv();
+    } 
+
+    &__strong{
+        @include mix.formatSpamMv();
+    }
+
+    &__img{
+        height: 170px;
+        width: 170px;
+        border-radius: 50%;
+    }
+
+    &__description-container{
+        text-align: center;
+    }
+
+    &__menu-container{
+        margin-top: 1rem;
+    }
+
+    &__menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &__link{
+        padding: .3rem 0;
+        border-bottom: 4px solid transparent;
+        font-family: map-get(v.$font , "Barlow Condensed");
+        font-size: 13px;
+        cursor: pointer;
+        transition: border .5s ease;
+        color: map-get(v.$colors , "color-secondary" );
+
+        &:hover{
+            border-color: map-get(v.$colors , "color-opacity" );
+        }
+    }
+
+    &__link--active{
+        color: map-get(v.$colors , "color-white" );
+        border-color: map-get(v.$colors , "color-white" );
+
+        &:hover{
+            border-color: map-get(v.$colors , "color-white" );
+        }
+    }
+
+    &__description{
+        color: map-get(v.$colors , "color-white" );
+    }
+
+    &__place{
+        font-family: map-get(v.$font , "Bellefair");
+        font-size: 57px;
+        font-weight: 100;
+        margin-top: 10px;
+    }
+
+    &__content{
+        color: map-get(v.$colors , "color-secondary" );
+        font-family: map-get(v.$font , "Barlow Condensed");
+        font-size: 16px;
+        line-height: 1.6rem;
+        padding: 0px .8rem;
+    }
+
+    &__card{
+        line-height: 2rem;
+    }
+
+    &__card-container{
+        width: 90%;
+        margin: 0 auto;
+        border-top: 1px solid map-get(v.$colors, "color-opacity" );
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+    }
+
+    &__card-title{
+        color: map-get(v.$colors , "color-secondary" );
+        font-family: map-get(v.$font , "Barlow Condensed");
+        font-size: 12px;
+        font-weight: 100;
+        
+    }
+
+    &__title-format{
+        font-size: 1.8rem;
+        font-family: map-get(v.$font , "Bellefair");
+        margin-bottom: 1rem;
+    }
+
+
+    @include mix.responsi(768px){
+        background-image: url("../assets/destination/background-destination-tablet.jpg");
+        height: 1024px;
+        padding-top: 136px;
+
+        &__title{
+            text-align: left;
+            font-size: 20px;
+            margin-left: 24px;
+            margin-bottom: 55px;
+        }
+
+        &__strong{
+            font-size: 20px;
+        }
+
+        &__img{
+            height: 300px;
+            width: 300px;
+        }
+
+        &__link{
+            font-size: 16px;
+        }
+
+        &__place{
+            font-size: 80px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        &__content{
+            width: 573px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+
+        &__card-title{
+            font-size: 14px;
+        }
+
+        &__title-format{
+            font-size: 28px;
+        }
+    }
+
+    @include mix.responsi(1024px){
+        background-image: url('../assets/destination/background-destination-desktop.jpg');
+        display: flex;
+        justify-content: space-around;
+        height: 100vh;
+
+        &__title{
+            margin-top: 2rem;
+            font-size: 28px;
+        }
+
+        &__menu{
+            margin: 2rem 0;
+            padding-right: 50%;
+            justify-content: space-between;
+        }
+
+        &__img{
+            height: 430px;
+            width: 430px;
+        }
+
+        &__description-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 445px;
+            height: 100%;
+            text-align: left;
+        }
+
+        &__card-container{
+            display: flex;
+            gap: 2rem;
+        }
+
+        &__description{
+            font-size: 18px;
+        }
+
+
+        &__place{
+            font-size: 100px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        &__content{
+            font-size: 18px;
+            padding-right: 20%;
+        }
+
+    }
+}
